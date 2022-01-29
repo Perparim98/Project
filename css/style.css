@@ -72,7 +72,7 @@ html {
 }
 .intro h2 {
   font-weight: 200;
-  font-size: 25;
+  font-size: 30px;
 }
 .intro button {
   cursor: pointer;
@@ -176,30 +176,92 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  margin-top: 45px;
+  margin-top: 50px;
 }
-.gallery img:hover {
-  transform: scale(1.1);
+.work {
+  position: relative;
+  overflow: hidden;
+}
+.work > img {
+  display: block;
+  width: 100%;
+}
+.work > img,
+.work > .content {
+  transition: 300ms ease-in-out;
+}
+.work:hover > img.blur {
+  filter: blur(5px);
+}
+.work > .content {
+  position: absolute;
+  inset: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  font-size: 20px;
+}
+.work > .content.fade {
+  opacity: 0;
+}
+.work:hover > .content.fade {
+  opacity: 1;
+}
+
+.work > .content.slide-left {
+  transform: translateX(-100%);
+}
+.work:hover > .content.slide-left {
+  transform: translateX(0);
+}
+
+.work > .content.slide-right {
+  transform: translateX(100%);
+}
+.work:hover > .content.slide-right {
+  transform: translateX(0);
+}
+
+.work > .content.slide-down {
+  transform: translateY(-100%);
+}
+.work:hover > .content.slide-down {
+  transform: translateY(0);
+}
+
+.work > .content.slide-up {
+  transform: translateY(100%);
+}
+.work:hover > .content.slide-up {
+  transform: translateY(0);
 }
 .contact {
   width: 100%;
-  height: 100vh;
+  height: 60vh;
+  overflow: hidden;
   background-color: #161c2c;
   color: #fff;
 
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-
-.contact .map iframe {
-  width: 800px;
-  height: 600px;
+.contact form {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
 }
-
 form input,
 textarea {
-  padding: 25px;
-  width: 80%;
+  padding: 15px;
+  width: 50%;
   border: none;
   border-bottom: 2px solid #fff;
   background-color: transparent;
@@ -220,6 +282,7 @@ form button {
   transform: 0.5s;
   font-size: 20px;
   display: block;
+  margin-left: 15em;
 }
 form button:hover {
   background-color: #fff;
@@ -228,8 +291,8 @@ form button:hover {
 .socialmedia {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 40vh;
+  align-items: center;
+  height: 10vh;
 }
 
 .socialmedia span {
@@ -247,8 +310,8 @@ footer {
 
 /* Responsiveness */
 
-/* Mobile / iPhone X*/
-@media screen and (max-width: 376px) and (orientation: portrait) {
+/* Mobile */
+@media screen and (max-width: 576px) and (orientation: portrait) {
   .container {
     margin: 0;
     width: 100%;
@@ -359,12 +422,18 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
   }
+  .work > .content {
+    font-size: 13px;
+  }
   .contact {
     height: 100vh;
   }
   .contact form {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
+  }
+  .contact form button {
+    margin-left: 4.7em;
   }
 
   .contact .socialmedia i {
@@ -374,7 +443,7 @@ footer {
     padding-top: 5px;
   }
 }
-/* Mobile / iPhone X (Landscape)*/
+/* Mobile /(Landscape)*/
 @media screen and (max-width: 819px) and (orientation: landscape) {
   .container {
     width: 100%;
@@ -418,6 +487,9 @@ footer {
   .about {
     height: auto;
     width: 100%;
+  }
+  .work > .content {
+    font-size: 13px;
   }
   .mt {
     position: absolute;
@@ -466,8 +538,11 @@ footer {
     padding: 50px 0;
   }
   .contact form {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
+  }
+  .contact form button {
+    margin-bottom: 20px;
   }
 
   .contact .socialmedia i {
@@ -519,9 +594,18 @@ footer {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
+  .work > .content {
+    font-size: 20px;
+  }
   .contact {
     height: auto;
     padding: 50px;
+  }
+  .contact button {
+    margin-left: 9em;
+  }
+  footer {
+    padding: 6px 0;
   }
 }
 
@@ -550,7 +634,9 @@ footer {
   .labs p {
     margin-top: -35px;
   }
-
+  .work > .content {
+    font-size: 20px;
+  }
   .portfolio {
     height: auto;
   }
@@ -563,6 +649,9 @@ footer {
   .contact {
     height: auto;
     padding: 50px;
+  }
+  .contact button {
+    margin-left: 13.5em;
   }
   footer {
     padding: 20px;
