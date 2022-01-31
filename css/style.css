@@ -41,7 +41,7 @@ html {
 .home .logo h1 {
   font-family: "Lobster", cursive;
   font-size: 40px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: #161c2c;
   cursor: pointer;
 }
@@ -372,11 +372,13 @@ footer {
   .mtt {
     display: none;
   }
+  .info {
+    text-align: center;
+  }
   .labs,
   .time,
   .frontend {
     width: 350px;
-    padding: 0 10px;
   }
 
   .labs {
