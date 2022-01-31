@@ -54,9 +54,11 @@ html {
   color: #161c2c;
   font-size: 25px;
   padding: 7px 15px;
-  transition: 0.5s;
+  transition: 0.7s;
   text-transform: uppercase;
+  border-radius: 0 10px 0 5px;
 }
+
 .home nav ul li a:hover {
   background-color: #161c2c;
   color: #fff;
@@ -86,6 +88,10 @@ html {
   border-radius: 5px;
   font-size: 22px;
 }
+.intro button:hover {
+  color: #161c2c;
+  font-weight: 600;
+}
 
 .intro button::after {
   content: "";
@@ -95,19 +101,20 @@ html {
   width: 100%;
   height: 100%;
 
-  background: rgba(218, 215, 215, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+
   z-index: -1;
-  transition: transform 200ms ease-in;
-  transition: transform 200ms ease-in;
+  transition: transform 300ms ease-in;
+  transition: transform 300ms ease-in;
 }
 .intro button::after {
   transform: scaleX(0);
-  transform-origin: center;
+  transform-origin: left;
 }
 
 .intro button:hover::after {
   transform: scaleX(1);
-  transform-origin: center;
+  transform-origin: left;
 }
 section.about {
   width: 100%;
@@ -158,16 +165,22 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
 }
 .works a {
   text-decoration: none;
   color: #161c2c;
+  padding: 5px 3px;
   margin-inline-start: 15px;
   font-size: 23px;
   margin-bottom: 15px;
+  border-radius: 3px;
+  transition: 0.5s;
 }
-.works a:nth-child(1) {
+.works a:hover {
+  background-color: #161c2c;
+  color: #fff;
+}
+.works a:focus {
   background-color: #161c2c;
   color: #fff;
   padding: 5px 10px;
@@ -272,6 +285,13 @@ textarea {
   margin-bottom: 20px;
   font-size: 18px;
 }
+::placeholder {
+  opacity: 1;
+  transition: opacity 1s;
+}
+:focus::placeholder {
+  opacity: 0;
+}
 
 form button {
   background-color: transparent;
@@ -285,7 +305,8 @@ form button {
   display: block;
   margin-left: 15em;
 }
-form button:hover {
+
+.contact-button:hover {
   background-color: #fff;
   color: #161c2c;
 }
@@ -300,6 +321,62 @@ form button:hover {
   padding: 0 20px;
   font-size: 25px;
   cursor: pointer;
+}
+.socialmedia span:nth-child(1)::after {
+  content: "Facebook";
+  z-index: -5;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+}
+.socialmedia span:nth-child(1):hover::after {
+  display: block;
+  z-index: 999;
+}
+.socialmedia span:nth-child(2)::after {
+  content: "Instagram";
+  z-index: -5;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+}
+.socialmedia span:nth-child(2):hover::after {
+  display: block;
+  z-index: 999;
+}
+.socialmedia span:nth-child(3)::after {
+  content: "Twitter";
+  z-index: -5;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+}
+.socialmedia span:nth-child(3):hover::after {
+  display: block;
+  z-index: 999;
+}
+.socialmedia span:nth-child(4)::after {
+  content: "Github";
+  z-index: -5;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+}
+.socialmedia span:nth-child(4):hover::after {
+  display: block;
+  z-index: 999;
+}
+.socialmedia span:nth-child(5)::after {
+  content: "Linkedin";
+
+  z-index: -5;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+}
+.socialmedia span:nth-child(5):hover::after {
+  display: block;
+  z-index: 999;
 }
 footer {
   height: 50px;
@@ -379,6 +456,7 @@ footer {
   .time,
   .frontend {
     width: 350px;
+    margin-left: 15px;
   }
 
   .labs {
