@@ -63,6 +63,7 @@ html {
   background-color: #161c2c;
   color: #fff;
 }
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -389,7 +390,7 @@ footer {
 /* Responsiveness */
 
 /* Mobile */
-@media screen and (max-width: 576px) and (orientation: portrait) {
+@media screen and (max-width: 600px) and (orientation: portrait) {
   .container {
     margin: 0;
     width: 100%;
